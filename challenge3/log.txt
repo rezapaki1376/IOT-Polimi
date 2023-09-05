@@ -1,0 +1,205 @@
+********************************************
+*                                          *
+*             TOSSIM Script                *
+*                                          *
+********************************************
+Initializing mac....
+Initializing radio channels....
+    using topology file: topology.txt
+    using noise file: meyer-heavy.txt
+Initializing simulator....
+Activate debug message on channel init
+Activate debug message on channel boot
+Activate debug message on channel timer
+Activate debug message on channel led_0
+Activate debug message on channel led_1
+Activate debug message on channel led_2
+Activate debug message on channel radio
+Activate debug message on channel radio_send
+Activate debug message on channel radio_rec
+Activate debug message on channel radio_pack
+Activate debug message on channel node6_leds
+('Creating node', 1, '...')
+>>>Will boot at time 0 [sec]
+('Creating node', 2, '...')
+>>>Will boot at time 0 [sec]
+('Creating node', 3, '...')
+>>>Will boot at time 0 [sec]
+('Creating node', 4, '...')
+>>>Will boot at time 0 [sec]
+('Creating node', 5, '...')
+>>>Will boot at time 0 [sec]
+('Creating node', 6, '...')
+>>>Will boot at time 0 [sec]
+('Creating node', 7, '...')
+>>>Will boot at time 0 [sec]
+Creating radio channels...
+>>>Setting radio channel from node  1  to node  2  with gain  -60.0  dBm
+>>>Setting radio channel from node  2  to node  1  with gain  -60.0  dBm
+>>>Setting radio channel from node  1  to node  3  with gain  -60.0  dBm
+>>>Setting radio channel from node  3  to node  1  with gain  -60.0  dBm
+>>>Setting radio channel from node  2  to node  4  with gain  -60.0  dBm
+>>>Setting radio channel from node  4  to node  2  with gain  -60.0  dBm
+>>>Setting radio channel from node  3  to node  4  with gain  -60.0  dBm
+>>>Setting radio channel from node  4  to node  3  with gain  -60.0  dBm
+>>>Setting radio channel from node  3  to node  5  with gain  -60.0  dBm
+>>>Setting radio channel from node  5  to node  3  with gain  -60.0  dBm
+>>>Setting radio channel from node  4  to node  6  with gain  -60.0  dBm
+>>>Setting radio channel from node  6  to node  4  with gain  -60.0  dBm
+>>>Setting radio channel from node  5  to node  6  with gain  -60.0  dBm
+>>>Setting radio channel from node  6  to node  5  with gain  -60.0  dBm
+>>>Setting radio channel from node  6  to node  7  with gain  -60.0  dBm
+>>>Setting radio channel from node  7  to node  6  with gain  -60.0  dBm
+>>>Setting radio channel from node  5  to node  7  with gain  -60.0  dBm
+>>>Setting radio channel from node  7  to node  5  with gain  -60.0  dBm
+Initializing Closest Pattern Matching (CPM)...
+Reading noise model data file: meyer-heavy.txt
+Loading:##Done!
+>>>Creating noise model for node: 1
+>>>Creating noise model for node: 2
+>>>Creating noise model for node: 3
+>>>Creating noise model for node: 4
+>>>Creating noise model for node: 5
+>>>Creating noise model for node: 6
+>>>Creating noise model for node: 7
+Start simulation with TOSSIM! 
+
+
+
+DEBUG (1): Application booted.
+DEBUG (1): application have booted and timer1 called.
+DEBUG (7): Application booted.
+DEBUG (3): Application booted.
+DEBUG (6): Application booted.
+DEBUG (2): Application booted.
+DEBUG (5): Application booted.
+DEBUG (4): Application booted.
+DEBUG (1): route request message generated with type: 1	and destination: 7 
+ sending packet at time 0:0:4.942382822 
+
+
+DEBUG (3): route request message generated with type: 1	and destination: 7 
+
+
+DEBUG (2): route request message generated with type: 1	and destination: 7 
+DEBUG (1): Packet sent at time 0:0:4.948364232 
+ sending packet at time 0:0:5.116210947 
+
+
+DEBUG (4): route request message generated with type: 1	and destination: 7 
+
+
+DEBUG (2): Packet sent at time 0:0:5.121551492 
+ sending packet at time 0:0:5.208007822 
+
+
+DEBUG (5): route request message generated with type: 1	and destination: 7 
+
+
+DEBUG (3): Packet sent at time 0:0:5.212051378 
+ sending packet at time 0:0:5.483398447 
+DEBUG (6):  message of type 1 received by node 6. save the LEDs status
+Node 6 LEDs status:
+000010
+
+DEBUG (6): route request message generated with type: 1	and destination: 7 
+
+
+
+
+DEBUG (4): Packet sent at time 0:0:5.491668662 
+ sending packet at time 0:0:5.678710947 
+
+
+DEBUG (7): route reply message generated with type: 2	and destination: 7	and sender: 7	and value: 1 
+DEBUG (6):  message of type 1 received by node 6. save the LEDs status
+Node 6 LEDs status:
+000010110
+
+
+
+DEBUG (5): Packet sent at time 0:0:5.682342518 
+ sending packet at time 0:0:6.060546885 
+
+
+
+
+
+
+DEBUG (6): Packet sent at time 0:0:6.065505962 
+ sending packet at time 0:0:6.354492197 
+
+
+DEBUG (5): route reply message generated with type: 2	and destination: 7	and sender: 5	and value: 2 
+DEBUG (6):  message of type 2 received by node 6. save the LEDs status
+Node 6 LEDs status:
+000010110111
+
+DEBUG (6): route reply message generated with type: 2	and destination: 7	and sender: 6	and value: 2 
+DEBUG (7): Packet sent at time 0:0:6.363815263 
+ sending packet at time 0:0:6.831054697 
+
+
+DEBUG (6):  message of type 2 received by node 6. save the LEDs status
+Node 6 LEDs status:
+000010110111011
+
+
+
+DEBUG (3): route reply message generated with type: 2	and destination: 7	and sender: 3	and value: 3 
+DEBUG (5): Packet sent at time 0:0:6.833251950 
+ sending packet at time 0:0:6.932617197 
+
+
+
+
+
+
+DEBUG (4): route reply message generated with type: 2	and destination: 7	and sender: 4	and value: 3 
+DEBUG (6): Packet sent at time 0:0:6.939773527 
+ sending packet at time 0:0:7.093750010 
+
+
+
+
+
+
+DEBUG (1): Data message generated with type: 0	and destination: 7	and sender: 1	and value: 5 
+DEBUG (3): Packet sent at time 0:0:7.097778306 
+ sending packet at time 0:0:7.156250010 
+
+
+DEBUG (3): Data message generated with type: 0	and destination: 7	and sender: 3	and value: 5 
+DEBUG (1): Packet sent at time 0:0:7.164245568 
+ sending packet at time 0:0:7.301757822 
+DEBUG (6):  message of type 2 received by node 6. save the LEDs status
+Node 6 LEDs status:
+000010110111011010
+
+
+
+
+
+DEBUG (2): route reply message generated with type: 2	and destination: 7	and sender: 2	and value: 4 
+DEBUG (4): Packet sent at time 0:0:7.309051481 
+ sending packet at time 0:0:7.424804697 
+
+
+DEBUG (5): Data message generated with type: 0	and destination: 7	and sender: 5	and value: 5 
+DEBUG (3): Packet sent at time 0:0:7.432754480 
+ sending packet at time 0:0:7.477539072 
+
+
+
+
+DEBUG (2): Packet sent at time 0:0:7.487533521 
+ sending packet at time 0:0:7.899414072 
+
+
+DEBUG (7): Data message received by the destination node: 7 with the value of: 5
+DEBUG (5): Packet sent at time 0:0:7.909118605 
+
+
+
+Simulation finished!
+
