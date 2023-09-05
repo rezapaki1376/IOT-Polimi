@@ -1,0 +1,658 @@
+********************************************
+*                                          *
+*             TOSSIM Script                *
+*                                          *
+********************************************
+Initializing mac....
+Initializing radio channels....
+    using topology file: topology.txt
+    using noise file: meyer-heavy.txt
+Initializing simulator....
+Activate debug message on channel init
+Activate debug message on channel boot
+Activate debug message on channel timer
+Activate debug message on channel connection
+Activate debug message on channel subscription
+Activate debug message on channel publish
+Activate debug message on channel radio
+Activate debug message on channel radio_send
+Activate debug message on channel radio_pack
+Activate debug message on channel radio_rec
+('Creating node', 1, '...')
+>>>Will boot at time 0 [sec]
+('Creating node', 2, '...')
+>>>Will boot at time 10 [sec]
+('Creating node', 3, '...')
+>>>Will boot at time 10 [sec]
+('Creating node', 4, '...')
+>>>Will boot at time 10 [sec]
+('Creating node', 5, '...')
+>>>Will boot at time 10 [sec]
+('Creating node', 6, '...')
+>>>Will boot at time 10 [sec]
+('Creating node', 7, '...')
+>>>Will boot at time 10 [sec]
+('Creating node', 8, '...')
+>>>Will boot at time 10 [sec]
+('Creating node', 9, '...')
+>>>Will boot at time 10 [sec]
+Creating radio channels...
+>>>Setting radio channel from node  1  to node  2  with gain  -60.0  dBm
+>>>Setting radio channel from node  2  to node  1  with gain  -60.0  dBm
+>>>Setting radio channel from node  1  to node  3  with gain  -60.0  dBm
+>>>Setting radio channel from node  3  to node  1  with gain  -60.0  dBm
+>>>Setting radio channel from node  1  to node  4  with gain  -60.0  dBm
+>>>Setting radio channel from node  4  to node  1  with gain  -60.0  dBm
+>>>Setting radio channel from node  1  to node  5  with gain  -60.0  dBm
+>>>Setting radio channel from node  5  to node  1  with gain  -60.0  dBm
+>>>Setting radio channel from node  1  to node  6  with gain  -60.0  dBm
+>>>Setting radio channel from node  6  to node  1  with gain  -60.0  dBm
+>>>Setting radio channel from node  1  to node  7  with gain  -60.0  dBm
+>>>Setting radio channel from node  7  to node  1  with gain  -60.0  dBm
+>>>Setting radio channel from node  1  to node  8  with gain  -60.0  dBm
+>>>Setting radio channel from node  8  to node  1  with gain  -60.0  dBm
+>>>Setting radio channel from node  1  to node  9  with gain  -60.0  dBm
+>>>Setting radio channel from node  9  to node  1  with gain  -60.0  dBm
+Initializing Closest Pattern Matching (CPM)...
+Reading noise model data file: meyer-heavy.txt
+Loading:##Done!
+>>>Creating noise model for node: 1
+>>>Creating noise model for node: 2
+>>>Creating noise model for node: 3
+>>>Creating noise model for node: 4
+>>>Creating noise model for node: 5
+>>>Creating noise model for node: 6
+>>>Creating noise model for node: 7
+>>>Creating noise model for node: 8
+>>>Creating noise model for node: 9
+Start simulation with TOSSIM! 
+
+
+
+DEBUG (1): Application booted.
+DEBUG (1): Radio on on node 1!
+DEBUG (3): Application booted.
+DEBUG (3): Conn message sent to the broker.
+DEBUG (7): Application booted.
+DEBUG (7): Conn message sent to the broker.
+DEBUG (6): Application booted.
+DEBUG (6): Conn message sent to the broker.
+DEBUG (9): Application booted.
+DEBUG (9): Conn message sent to the broker.
+DEBUG (5): Application booted.
+DEBUG (5): Conn message sent to the broker.
+DEBUG (2): Application booted.
+DEBUG (2): Conn message sent to the broker.
+DEBUG (4): Application booted.
+DEBUG (4): Conn message sent to the broker.
+DEBUG (8): Application booted.
+DEBUG (8): Conn message sent to the broker.
+DEBUG (3): Radio on on node 3!
+DEBUG (7): Radio on on node 7!
+DEBUG (4): Radio on on node 4!
+DEBUG (8): Radio on on node 8!
+DEBUG (5): Radio on on node 5!
+DEBUG (2): Radio on on node 2!
+DEBUG (6): Radio on on node 6!
+DEBUG (9): Radio on on node 9!
+DEBUG (1): Connect msg received from Node 2.
+DEBUG (1): ConnAck message sent to the node 2.
+DEBUG (2): ConnAck message in node 2 received in time.
+DEBUG (1): Connect msg received from Node 3.
+DEBUG (1): ConnAck message sent to the node 3.
+DEBUG (3): ConnAck message in node 3 received in time.
+DEBUG (1): Connect msg received from Node 4.
+DEBUG (1): ConnAck message sent to the node 4.
+DEBUG (4): ConnAck message in node 4 received in time.
+DEBUG (1): Connect msg received from Node 5.
+DEBUG (1): ConnAck message sent to the node 5.
+DEBUG (5): ConnAck message in node 5 received in time.
+DEBUG (1): Connect msg received from Node 6.
+DEBUG (1): ConnAck message sent to the node 6.
+DEBUG (6): ConnAck message in node 6 received in time.
+DEBUG (1): Connect msg received from Node 7.
+DEBUG (1): ConnAck message sent to the node 7.
+DEBUG (7): ConnAck message in node 7 received in time.
+DEBUG (1): Connect msg received from Node 8.
+DEBUG (1): ConnAck message sent to the node 8.
+DEBUG (8): ConnAck message in node 8 received in time.
+DEBUG (1): Connect msg received from Node 9.
+DEBUG (1): ConnAck message sent to the node 9.
+DEBUG (9): ConnAck message in node 9 received in time.
+DEBUG (3): going to next subscription in node 3.
+DEBUG (3): Subsription message with topic of temprature(1) sent to the broker.
+DEBUG (4): going to next subscription in node 4.
+DEBUG (4): Subsription message with topic of temprature(1) sent to the broker.
+DEBUG (5): going to next subscription in node 5.
+DEBUG (5): Subsription message with topic of humidity(2) sent to the broker.
+DEBUG (1): Subsription message received from Node 3.
+DEBUG (1): Node 3 subscribed to topic temprature(1).
+
+DEBUG (1): SubAck message for topic temprature(1) sent to the node 3.
+DEBUG (7): going to next subscription in node 7.
+DEBUG (7): Subsription message with topic of temprature(1) sent to the broker.
+DEBUG (1): Subsription message received from Node 4.
+DEBUG (1): Node 4 subscribed to topic temprature(1).
+
+DEBUG (1): SubAck message for topic temprature(1) sent to the node 4.
+DEBUG (8): going to next subscription in node 8.
+DEBUG (8): Subsription message with topic of luminosity(3) sent to the broker.
+DEBUG (4): SubAck for topic temprature(1) received in time.
+DEBUG (9): going to next subscription in node 9.
+DEBUG (9): Subsription message with topic of temprature(1) sent to the broker.
+DEBUG (1): Subsription message received from Node 5.
+DEBUG (1): Node 5 subscribed to topic humidity(2).
+
+DEBUG (1): SubAck message for topic humidity(2) sent to the node 5.
+DEBUG (5): SubAck for topic humidity(2) received in time.
+DEBUG (1): Subsription message received from Node 7.
+DEBUG (1): Node 7 subscribed to topic temprature(1).
+
+DEBUG (1): SubAck message for topic temprature(1) sent to the node 7.
+DEBUG (7): SubAck for topic temprature(1) received in time.
+DEBUG (1): Subsription message received from Node 8.
+DEBUG (1): Node 8 subscribed to topic luminosity(3).
+
+DEBUG (1): SubAck message for topic luminosity(3) sent to the node 8.
+DEBUG (8): SubAck for topic luminosity(3) received in time.
+DEBUG (1): Subsription message received from Node 9.
+DEBUG (1): Node 9 subscribed to topic temprature(1).
+
+DEBUG (1): SubAck message for topic temprature(1) sent to the node 9.
+DEBUG (9): SubAck for topic temprature(1) received in time.
+DEBUG (2):  Publish message with value of 21 and topic temprature(1) sent to the broker.
+ERROR (3): ACK of sub message for topic temprature(1) was not recieved in node 3.
+DEBUG (3): Subsription message with topic of temprature(1) sent to the broker.
+DEBUG (1):  Publish message 21 received with topic temprature(1) from Node 2.
+DEBUG (1):  Message 21 is queued to be published.
+DEBUG (1):  Publish message sent to the node 3.
+DEBUG (3):   Message 21 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 21 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 7.
+DEBUG (1): Subsription message received from Node 3.
+DEBUG (1): SubAck message for topic temprature(1) sent to the node 3.
+DEBUG (7):   Message 21 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 9.
+DEBUG (6):  Publish message with value of 13 and topic humidity(2) sent to the broker.
+DEBUG (9):   Message 21 received with topic temprature(1) from the broker.
+DEBUG (4): going to next subscription in node 4.
+DEBUG (4): Subsription message with topic of humidity(2) sent to the broker.
+DEBUG (5): going to next subscription in node 5.
+DEBUG (5): Subsription message with topic of luminosity(3) sent to the broker.
+DEBUG (1):  Publish message 13 received with topic humidity(2) from Node 6.
+DEBUG (1):  Message 13 is queued to be published.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (1): Subsription message received from Node 4.
+DEBUG (1): Node 4 subscribed to topic humidity(2).
+
+DEBUG (1): SubAck message for topic humidity(2) sent to the node 4.
+DEBUG (5):   Message 13 received with topic humidity(2) from the broker.
+DEBUG (1): Subsription message received from Node 5.
+DEBUG (1): Node 5 subscribed to topic luminosity(3).
+
+DEBUG (1): SubAck message for topic luminosity(3) sent to the node 5.
+DEBUG (5): SubAck for topic luminosity(3) received in time.
+DEBUG (8): going to next subscription in node 8.
+DEBUG (8): Subsription message with topic of humidity(2) sent to the broker.
+DEBUG (1): Subsription message received from Node 8.
+DEBUG (1): Node 8 subscribed to topic humidity(2).
+
+DEBUG (1): SubAck message for topic humidity(2) sent to the node 8.
+DEBUG (8): SubAck for topic humidity(2) received in time.
+DEBUG (2):  Publish message with value of 67 and topic temprature(1) sent to the broker.
+ERROR (3): ACK of sub message for topic temprature(1) was not recieved in node 3.
+DEBUG (3): Subsription message with topic of temprature(1) sent to the broker.
+DEBUG (1):  Publish message 67 received with topic temprature(1) from Node 2.
+DEBUG (1):  Message 67 is queued to be published.
+DEBUG (1):  Publish message sent to the node 3.
+DEBUG (3):   Message 67 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 67 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 7.
+DEBUG (1): Subsription message received from Node 3.
+DEBUG (1): SubAck message for topic temprature(1) sent to the node 3.
+DEBUG (7):   Message 67 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 9.
+DEBUG (6):  Publish message with value of 87 and topic humidity(2) sent to the broker.
+DEBUG (9):   Message 67 received with topic temprature(1) from the broker.
+ERROR (4): ACK of sub message for topic humidity(2) was not recieved in node 4.
+DEBUG (4): Subsription message with topic of humidity(2) sent to the broker.
+DEBUG (1):  Publish message 87 received with topic humidity(2) from Node 6.
+DEBUG (1):  Message 87 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (1): Subsription message received from Node 4.
+DEBUG (1): SubAck message for topic humidity(2) sent to the node 4.
+DEBUG (4):   Message 87 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 87 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 87 received with topic humidity(2) from the broker.
+DEBUG (7):  Publish message with value of 84 and topic humidity(2) sent to the broker.
+DEBUG (9):  Publish message with value of 98 and topic humidity(2) sent to the broker.
+DEBUG (1):  Publish message 84 received with topic humidity(2) from Node 7.
+DEBUG (1):  Message 84 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 84 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 84 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 84 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message 98 received with topic humidity(2) from Node 9.
+DEBUG (1):  Message 98 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 98 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 98 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 98 received with topic humidity(2) from the broker.
+DEBUG (2):  Publish message with value of 77 and topic temprature(1) sent to the broker.
+ERROR (3): ACK of sub message for topic temprature(1) was not recieved in node 3.
+DEBUG (3): Subsription message with topic of temprature(1) sent to the broker.
+DEBUG (1):  Publish message 77 received with topic temprature(1) from Node 2.
+DEBUG (1):  Message 77 is queued to be published.
+DEBUG (1):  Publish message sent to the node 3.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 77 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 7.
+DEBUG (1): Subsription message received from Node 3.
+DEBUG (1): SubAck message for topic temprature(1) sent to the node 3.
+DEBUG (1):  Publish message sent to the node 9.
+DEBUG (6):  Publish message with value of 4 and topic humidity(2) sent to the broker.
+DEBUG (3): SubAck for topic temprature(1) received in time.
+ERROR (4): ACK of sub message for topic humidity(2) was not recieved in node 4.
+DEBUG (4): Subsription message with topic of humidity(2) sent to the broker.
+DEBUG (1):  Publish message 4 received with topic humidity(2) from Node 6.
+DEBUG (1):  Message 4 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (1): Subsription message received from Node 4.
+DEBUG (1): SubAck message for topic humidity(2) sent to the node 4.
+DEBUG (4):   Message 4 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 4 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 4 received with topic humidity(2) from the broker.
+DEBUG (7):  Publish message with value of 77 and topic humidity(2) sent to the broker.
+DEBUG (9):  Publish message with value of 19 and topic humidity(2) sent to the broker.
+DEBUG (1):  Publish message 77 received with topic humidity(2) from Node 7.
+DEBUG (1):  Message 77 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 77 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 77 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 77 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message 19 received with topic humidity(2) from Node 9.
+DEBUG (1):  Message 19 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 19 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 19 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 19 received with topic humidity(2) from the broker.
+DEBUG (2):  Publish message with value of 43 and topic temprature(1) sent to the broker.
+DEBUG (1):  Publish message 43 received with topic temprature(1) from Node 2.
+DEBUG (1):  Message 43 is queued to be published.
+DEBUG (1):  Publish message sent to the node 3.
+DEBUG (3):   Message 43 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 43 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 7.
+DEBUG (7):   Message 43 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 9.
+DEBUG (6):  Publish message with value of 1 and topic humidity(2) sent to the broker.
+DEBUG (9):   Message 43 received with topic temprature(1) from the broker.
+ERROR (4): ACK of sub message for topic humidity(2) was not recieved in node 4.
+DEBUG (4): Subsription message with topic of humidity(2) sent to the broker.
+DEBUG (1):  Publish message 1 received with topic humidity(2) from Node 6.
+DEBUG (1):  Message 1 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (1): Subsription message received from Node 4.
+DEBUG (1): SubAck message for topic humidity(2) sent to the node 4.
+DEBUG (4):   Message 1 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 1 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 1 received with topic humidity(2) from the broker.
+DEBUG (7):  Publish message with value of 18 and topic humidity(2) sent to the broker.
+DEBUG (9):  Publish message with value of 81 and topic humidity(2) sent to the broker.
+DEBUG (1):  Publish message 81 received with topic humidity(2) from Node 9.
+DEBUG (1):  Message 81 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 81 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 81 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 81 received with topic humidity(2) from the broker.
+DEBUG (2):  Publish message with value of 63 and topic temprature(1) sent to the broker.
+DEBUG (1):  Publish message 63 received with topic temprature(1) from Node 2.
+DEBUG (1):  Message 63 is queued to be published.
+DEBUG (1):  Publish message sent to the node 3.
+DEBUG (3):   Message 63 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 63 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 7.
+DEBUG (7):   Message 63 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 9.
+DEBUG (6):  Publish message with value of 69 and topic humidity(2) sent to the broker.
+DEBUG (9):   Message 63 received with topic temprature(1) from the broker.
+ERROR (4): ACK of sub message for topic humidity(2) was not recieved in node 4.
+DEBUG (4): Subsription message with topic of humidity(2) sent to the broker.
+DEBUG (1):  Publish message 69 received with topic humidity(2) from Node 6.
+DEBUG (1):  Message 69 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (1): Subsription message received from Node 4.
+DEBUG (1): SubAck message for topic humidity(2) sent to the node 4.
+DEBUG (4):   Message 69 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 69 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 69 received with topic humidity(2) from the broker.
+DEBUG (7):  Publish message with value of 15 and topic humidity(2) sent to the broker.
+DEBUG (9):  Publish message with value of 44 and topic humidity(2) sent to the broker.
+DEBUG (1):  Publish message 15 received with topic humidity(2) from Node 7.
+DEBUG (1):  Message 15 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 15 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 15 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 15 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message 44 received with topic humidity(2) from Node 9.
+DEBUG (1):  Message 44 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 44 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 44 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 44 received with topic humidity(2) from the broker.
+DEBUG (2):  Publish message with value of 52 and topic temprature(1) sent to the broker.
+DEBUG (1):  Publish message 52 received with topic temprature(1) from Node 2.
+DEBUG (1):  Message 52 is queued to be published.
+DEBUG (1):  Publish message sent to the node 3.
+DEBUG (3):   Message 52 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 52 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 7.
+DEBUG (7):   Message 52 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 9.
+DEBUG (6):  Publish message with value of 77 and topic humidity(2) sent to the broker.
+DEBUG (9):   Message 52 received with topic temprature(1) from the broker.
+ERROR (4): ACK of sub message for topic humidity(2) was not recieved in node 4.
+DEBUG (4): Subsription message with topic of humidity(2) sent to the broker.
+DEBUG (1):  Publish message 77 received with topic humidity(2) from Node 6.
+DEBUG (1):  Message 77 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (1): Subsription message received from Node 4.
+DEBUG (1): SubAck message for topic humidity(2) sent to the node 4.
+DEBUG (4):   Message 77 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 77 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 77 received with topic humidity(2) from the broker.
+DEBUG (7):  Publish message with value of 48 and topic humidity(2) sent to the broker.
+DEBUG (9):  Publish message with value of 33 and topic humidity(2) sent to the broker.
+DEBUG (1):  Publish message 48 received with topic humidity(2) from Node 7.
+DEBUG (1):  Message 48 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 48 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 48 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 48 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message 33 received with topic humidity(2) from Node 9.
+DEBUG (1):  Message 33 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 33 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 33 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 33 received with topic humidity(2) from the broker.
+DEBUG (2):  Publish message with value of 68 and topic temprature(1) sent to the broker.
+DEBUG (1):  Publish message 68 received with topic temprature(1) from Node 2.
+DEBUG (1):  Message 68 is queued to be published.
+DEBUG (1):  Publish message sent to the node 3.
+DEBUG (3):   Message 68 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 68 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 7.
+DEBUG (7):   Message 68 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 9.
+DEBUG (6):  Publish message with value of 68 and topic humidity(2) sent to the broker.
+DEBUG (9):   Message 68 received with topic temprature(1) from the broker.
+ERROR (4): ACK of sub message for topic humidity(2) was not recieved in node 4.
+DEBUG (4): Subsription message with topic of humidity(2) sent to the broker.
+DEBUG (1):  Publish message 68 received with topic humidity(2) from Node 6.
+DEBUG (1):  Message 68 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (1): Subsription message received from Node 4.
+DEBUG (1): SubAck message for topic humidity(2) sent to the node 4.
+DEBUG (4):   Message 68 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 68 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 68 received with topic humidity(2) from the broker.
+DEBUG (7):  Publish message with value of 49 and topic humidity(2) sent to the broker.
+DEBUG (9):  Publish message with value of 94 and topic humidity(2) sent to the broker.
+DEBUG (1):  Publish message 49 received with topic humidity(2) from Node 7.
+DEBUG (1):  Message 49 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 49 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 49 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 49 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message 94 received with topic humidity(2) from Node 9.
+DEBUG (1):  Message 94 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 94 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 94 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 94 received with topic humidity(2) from the broker.
+DEBUG (2):  Publish message with value of 76 and topic temprature(1) sent to the broker.
+DEBUG (1):  Publish message 76 received with topic temprature(1) from Node 2.
+DEBUG (1):  Message 76 is queued to be published.
+DEBUG (1):  Publish message sent to the node 3.
+DEBUG (3):   Message 76 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 76 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 7.
+DEBUG (7):   Message 76 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 9.
+DEBUG (6):  Publish message with value of 10 and topic humidity(2) sent to the broker.
+DEBUG (9):   Message 76 received with topic temprature(1) from the broker.
+ERROR (4): ACK of sub message for topic humidity(2) was not recieved in node 4.
+DEBUG (4): Subsription message with topic of humidity(2) sent to the broker.
+DEBUG (1):  Publish message 10 received with topic humidity(2) from Node 6.
+DEBUG (1):  Message 10 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 10 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 10 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 10 received with topic humidity(2) from the broker.
+DEBUG (7):  Publish message with value of 0 and topic humidity(2) sent to the broker.
+DEBUG (9):  Publish message with value of 0 and topic humidity(2) sent to the broker.
+DEBUG (1):  Publish message 0 received with topic humidity(2) from Node 7.
+DEBUG (1):  Message 0 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 0 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 0 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 0 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message 0 received with topic humidity(2) from Node 9.
+DEBUG (1):  Message 0 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 0 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 0 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 0 received with topic humidity(2) from the broker.
+DEBUG (2):  Publish message with value of 99 and topic temprature(1) sent to the broker.
+DEBUG (1):  Publish message 99 received with topic temprature(1) from Node 2.
+DEBUG (1):  Message 99 is queued to be published.
+DEBUG (1):  Publish message sent to the node 3.
+DEBUG (3):   Message 99 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 99 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 7.
+DEBUG (7):   Message 99 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 9.
+DEBUG (6):  Publish message with value of 61 and topic humidity(2) sent to the broker.
+DEBUG (9):   Message 99 received with topic temprature(1) from the broker.
+ERROR (4): ACK of sub message for topic humidity(2) was not recieved in node 4.
+DEBUG (4): Subsription message with topic of humidity(2) sent to the broker.
+DEBUG (1):  Publish message 61 received with topic humidity(2) from Node 6.
+DEBUG (1):  Message 61 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (1): Subsription message received from Node 4.
+DEBUG (1): SubAck message for topic humidity(2) sent to the node 4.
+DEBUG (4):   Message 61 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 61 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 61 received with topic humidity(2) from the broker.
+DEBUG (7):  Publish message with value of 69 and topic humidity(2) sent to the broker.
+DEBUG (9):  Publish message with value of 86 and topic humidity(2) sent to the broker.
+DEBUG (1):  Publish message 86 received with topic humidity(2) from Node 9.
+DEBUG (1):  Message 86 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 86 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 86 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 86 received with topic humidity(2) from the broker.
+DEBUG (2):  Publish message with value of 5 and topic temprature(1) sent to the broker.
+DEBUG (1):  Publish message 5 received with topic temprature(1) from Node 2.
+DEBUG (1):  Message 5 is queued to be published.
+DEBUG (1):  Publish message sent to the node 3.
+DEBUG (3):   Message 5 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 5 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 7.
+DEBUG (7):   Message 5 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 9.
+DEBUG (6):  Publish message with value of 13 and topic humidity(2) sent to the broker.
+DEBUG (9):   Message 5 received with topic temprature(1) from the broker.
+ERROR (4): ACK of sub message for topic humidity(2) was not recieved in node 4.
+DEBUG (4): Subsription message with topic of humidity(2) sent to the broker.
+DEBUG (1):  Publish message 13 received with topic humidity(2) from Node 6.
+DEBUG (1):  Message 13 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (1): Subsription message received from Node 4.
+DEBUG (1): SubAck message for topic humidity(2) sent to the node 4.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 13 received with topic humidity(2) from the broker.
+DEBUG (7):  Publish message with value of 61 and topic humidity(2) sent to the broker.
+DEBUG (9):  Publish message with value of 60 and topic humidity(2) sent to the broker.
+DEBUG (1):  Publish message 61 received with topic humidity(2) from Node 7.
+DEBUG (1):  Message 61 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 61 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 61 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message 60 received with topic humidity(2) from Node 9.
+DEBUG (1):  Message 60 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 60 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 60 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 60 received with topic humidity(2) from the broker.
+DEBUG (2):  Publish message with value of 57 and topic temprature(1) sent to the broker.
+DEBUG (1):  Publish message 57 received with topic temprature(1) from Node 2.
+DEBUG (1):  Message 57 is queued to be published.
+DEBUG (1):  Publish message sent to the node 3.
+DEBUG (3):   Message 57 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 57 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 7.
+DEBUG (7):   Message 57 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 9.
+DEBUG (6):  Publish message with value of 6 and topic humidity(2) sent to the broker.
+DEBUG (9):   Message 57 received with topic temprature(1) from the broker.
+ERROR (4): ACK of sub message for topic humidity(2) was not recieved in node 4.
+DEBUG (4): Subsription message with topic of humidity(2) sent to the broker.
+DEBUG (1):  Publish message 6 received with topic humidity(2) from Node 6.
+DEBUG (1):  Message 6 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (1): Subsription message received from Node 4.
+DEBUG (1): SubAck message for topic humidity(2) sent to the node 4.
+DEBUG (4):   Message 6 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 6 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 6 received with topic humidity(2) from the broker.
+DEBUG (7):  Publish message with value of 15 and topic humidity(2) sent to the broker.
+DEBUG (9):  Publish message with value of 19 and topic humidity(2) sent to the broker.
+DEBUG (1):  Publish message 15 received with topic humidity(2) from Node 7.
+DEBUG (1):  Message 15 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 15 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 15 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 15 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message 19 received with topic humidity(2) from Node 9.
+DEBUG (1):  Message 19 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 19 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 19 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 19 received with topic humidity(2) from the broker.
+DEBUG (2):  Publish message with value of 36 and topic temprature(1) sent to the broker.
+DEBUG (1):  Publish message 36 received with topic temprature(1) from Node 2.
+DEBUG (1):  Message 36 is queued to be published.
+DEBUG (1):  Publish message sent to the node 3.
+DEBUG (3):   Message 36 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 36 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 7.
+DEBUG (7):   Message 36 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 9.
+DEBUG (6):  Publish message with value of 82 and topic humidity(2) sent to the broker.
+DEBUG (9):   Message 36 received with topic temprature(1) from the broker.
+ERROR (4): ACK of sub message for topic humidity(2) was not recieved in node 4.
+DEBUG (4): Subsription message with topic of humidity(2) sent to the broker.
+DEBUG (1):  Publish message 82 received with topic humidity(2) from Node 6.
+DEBUG (1):  Message 82 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 82 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 82 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 82 received with topic humidity(2) from the broker.
+DEBUG (7):  Publish message with value of 71 and topic humidity(2) sent to the broker.
+DEBUG (9):  Publish message with value of 63 and topic humidity(2) sent to the broker.
+DEBUG (1):  Publish message 71 received with topic humidity(2) from Node 7.
+DEBUG (1):  Message 71 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 71 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 71 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 71 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message 63 received with topic humidity(2) from Node 9.
+DEBUG (1):  Message 63 is queued to be published.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 63 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 5.
+DEBUG (5):   Message 63 received with topic humidity(2) from the broker.
+DEBUG (1):  Publish message sent to the node 8.
+DEBUG (8):   Message 63 received with topic humidity(2) from the broker.
+DEBUG (2):  Publish message with value of 46 and topic temprature(1) sent to the broker.
+DEBUG (1):  Publish message 46 received with topic temprature(1) from Node 2.
+DEBUG (1):  Message 46 is queued to be published.
+DEBUG (1):  Publish message sent to the node 3.
+DEBUG (3):   Message 46 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 4.
+DEBUG (4):   Message 46 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 7.
+DEBUG (7):   Message 46 received with topic temprature(1) from the broker.
+DEBUG (1):  Publish message sent to the node 9.
+DEBUG (6):  Publish message with value of 41 and topic humidity(2) sent to the broker.
