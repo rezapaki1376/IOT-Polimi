@@ -1,0 +1,442 @@
+[
+    {
+        "id": "2d895aa5503e3407",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "c8560d4fd2640e94",
+        "type": "mqtt in",
+        "z": "2d895aa5503e3407",
+        "name": "subscriber",
+        "topic": "polimi/challenge_2/2023/id_code_generator/15",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "3c3f5953fead598f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 360,
+        "wires": [
+            [
+                "e4d228dfee53d33f"
+            ]
+        ]
+    },
+    {
+        "id": "a3b0b1df96bb8450",
+        "type": "file in",
+        "z": "2d895aa5503e3407",
+        "name": "CSV read",
+        "filename": "F:\\IOT\\IOT\\MINE\\challenges\\2\\Challenge2\\challenge2023_2.csv",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 560,
+        "y": 360,
+        "wires": [
+            [
+                "09f665a5f89eb5fe"
+            ]
+        ]
+    },
+    {
+        "id": "e4d228dfee53d33f",
+        "type": "function",
+        "z": "2d895aa5503e3407",
+        "name": "frame number generator",
+        "func": "// defining the counter for limiting receiving just 100 messages \nvar counter = global.get('counter') || 0;\n// saving the ID of the message for using it in the next nodes\nvar id = msg.payload.id;\nglobal.set(\"msg_id\", id);\n// defining the frame_number based on our person code.\n// this value is because to search this value in CSV file\nvar frame_number = (parseInt(id) + 2693) % 7711;\nglobal.set(\"frame_number\", frame_number);\n// now increase the counter because the new message came, and then set it as global value.\ncounter++;\nglobal.set('counter', counter);\n\nmsg.payload = frame_number;\n// here we are stopping to send message after 100 messages\nif (counter <= 100) {\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 360,
+        "wires": [
+            [
+                "a3b0b1df96bb8450",
+                "03581a0a69b03ae3"
+            ]
+        ]
+    },
+    {
+        "id": "09f665a5f89eb5fe",
+        "type": "csv",
+        "z": "2d895aa5503e3407",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "none",
+        "multi": "one",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": "",
+        "x": 710,
+        "y": 360,
+        "wires": [
+            [
+                "e5ca1d841d80e3cc"
+            ]
+        ]
+    },
+    {
+        "id": "e5ca1d841d80e3cc",
+        "type": "function",
+        "z": "2d895aa5503e3407",
+        "name": "CSV control",
+        "func": "// get the frame_number and save in variable frame\nvar frame = global.get(\"frame_number\");\n// check the frame number with 'No.' field of the CSV file.\nif (frame == msg.payload['No.']) {\n        // check if message is publish message or not based on \"Info\" column \n        if (msg.payload.Info.includes('Publish Message')) {\n                // check if column \"Message\" does exist or not\n                if (msg.payload.Message !== undefined) {\n                        // save the content of message in payload and return the msg\n                        var msg_content = msg.payload.Message;\n                        msg.payload = {};\n                        msg.payload = msg_content;\n                        return msg;\n                }\n                // return empty message if \"Message\" column not defined\n                else {\n                        msg.payload = {};\n                        msg.payload = '{}';\n                        return msg;\n                }\n        }\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 210,
+        "y": 440,
+        "wires": [
+            [
+                "a397df46001f07d2"
+            ]
+        ]
+    },
+    {
+        "id": "d490ccd434ecd09e",
+        "type": "mqtt out",
+        "z": "2d895aa5503e3407",
+        "name": "publisher",
+        "topic": "/polimi/iot2023/challenge2/10832693",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "3c3f5953fead598f",
+        "x": 760,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "b355e22fc8844a68",
+        "type": "function",
+        "z": "2d895aa5503e3407",
+        "name": "MSG_parser",
+        "func": "var str;\n// setting the msg_id and current timestamp\nvar id = global.get(\"msg_id\");\nvar timestamp = Date.now();\n// removing {} from first and end of the string to handle\n// the string in a simple way\nmsg.payload = msg.payload.replace(',{', '');\nmsg.payload = msg.payload.replace('{', '');\n\n// creating a string with the json format \n//that contains \"timestamp\",\"ID\",\"payload\"\nstr = \"{\\\"timestamp\\\":\\\"\" + timestamp + \"\\\",\\\"id\\\":\\\"\" + id+ \"\\\",\\\"payload\\\":{\"+msg.payload+\"}}\";\n\nmsg.payload = str;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 440,
+        "wires": [
+            [
+                "d490ccd434ecd09e"
+            ]
+        ]
+    },
+    {
+        "id": "a397df46001f07d2",
+        "type": "split",
+        "z": "2d895aa5503e3407",
+        "name": "",
+        "splt": "}",
+        "spltType": "str",
+        "arraySplt": "1",
+        "arraySpltType": "len",
+        "stream": true,
+        "addname": "",
+        "x": 370,
+        "y": 440,
+        "wires": [
+            [
+                "b355e22fc8844a68"
+            ]
+        ]
+    },
+    {
+        "id": "537326d23a4d9a3a",
+        "type": "mqtt in",
+        "z": "2d895aa5503e3407",
+        "name": "subscriber",
+        "topic": "/polimi/iot2023/challenge2/10832693",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "3c3f5953fead598f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 80,
+        "y": 660,
+        "wires": [
+            [
+                "44d665ab40032445",
+                "3a96c37d065811de"
+            ]
+        ]
+    },
+    {
+        "id": "44d665ab40032445",
+        "type": "function",
+        "z": "2d895aa5503e3407",
+        "name": "temp_generature",
+        "func": "/* receiving message from broker \nand check the type of temperature if it is \"C\" */\nif (msg.payload.payload.unit == 'C'){\n    // select the upper bound of the temrature and return it as the payload\n    msg.payload = msg.payload.payload.range[1];\n    \n    return msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 620,
+        "wires": [
+            [
+                "0ae64d45744d9779"
+            ]
+        ]
+    },
+    {
+        "id": "ac5f3d14789ccc19",
+        "type": "file",
+        "z": "2d895aa5503e3407",
+        "name": "",
+        "filename": "F:\\IOT\\IOT\\MINE\\challenges\\2\\Challenge2\\out.csv",
+        "filenameType": "str",
+        "appendNewline": false,
+        "createDir": false,
+        "overwriteFile": "false",
+        "encoding": "none",
+        "x": 750,
+        "y": 700,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3a96c37d065811de",
+        "type": "function",
+        "z": "2d895aa5503e3407",
+        "name": "Final output generator",
+        "func": "/* take the messages that are contain temperature in Celsius and \nsave them in CSV file */\nif (msg.payload.payload.unit == 'C'){    \n    return msg;\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 700,
+        "wires": [
+            [
+                "931e35240dec6b18"
+            ]
+        ]
+    },
+    {
+        "id": "0ae64d45744d9779",
+        "type": "ui_chart",
+        "z": "2d895aa5503e3407",
+        "name": "",
+        "group": "47628c5c6061af90",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 550,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "03581a0a69b03ae3",
+        "type": "function",
+        "z": "2d895aa5503e3407",
+        "name": "check the start and end",
+        "func": "// send START mesage to the broker before starting the procedure\nvar counter = global.get(\"counter\");\nif(counter == 1){\n    msg.payload = 'START';\n    return msg;\n}\n// check if the message generation procedure finished then send \n// END message to the broker\nelse if (counter == 100) {\n    msg.payload = 'END';\n    return msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 280,
+        "wires": [
+            [
+                "15b46c79b93464fa"
+            ]
+        ]
+    },
+    {
+        "id": "f9e93b1898e26011",
+        "type": "inject",
+        "z": "2d895aa5503e3407",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 260,
+        "wires": [
+            [
+                "bf07abd1ccc8ecbd"
+            ]
+        ]
+    },
+    {
+        "id": "bf07abd1ccc8ecbd",
+        "type": "function",
+        "z": "2d895aa5503e3407",
+        "name": "counter reset",
+        "func": "var counter = global.get(\"counter\");\nglobal.set(\"counter\",0);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "15b46c79b93464fa",
+        "type": "mqtt out",
+        "z": "2d895aa5503e3407",
+        "name": "Start & end",
+        "topic": "/polimi/iot2023/challenge2/10832693",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "3c3f5953fead598f",
+        "x": 850,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "931e35240dec6b18",
+        "type": "csv",
+        "z": "2d895aa5503e3407",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "once",
+        "multi": "one",
+        "ret": "\\r\\n",
+        "temp": "id,timestamp,payload",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": true,
+        "include_null_values": true,
+        "x": 470,
+        "y": 700,
+        "wires": [
+            [
+                "ac5f3d14789ccc19"
+            ]
+        ]
+    },
+    {
+        "id": "3c3f5953fead598f",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "47628c5c6061af90",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "1a38a5396a127341",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1a38a5396a127341",
+        "type": "ui_tab",
+        "name": "Home_IOT",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
